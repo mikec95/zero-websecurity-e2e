@@ -1,0 +1,19 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:run": "cypress run",
+    "cy:open": "cypress open"
+  },
+  "author": "Michael Carbonari",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^7.0.1",
+    "prettier": "^2.2.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}

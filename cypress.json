@@ -1,0 +1,5 @@
+{
+  "baseUrl": "http://zero.webappsecurity.com",
+  "pageLoadTimeout": 60000,
+  "waitForAnimations": true
+}
