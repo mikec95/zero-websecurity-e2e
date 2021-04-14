@@ -1,7 +1,7 @@
 {
   "name": "package",
   "version": "1.0.0",
-  "description": "",
+  "description": "End to end test for the following site:\r http://zero.webappsecurity.com/login.html",
   "main": "index.js",
   "scripts": {
     "cy:run": "cypress run",
@@ -15,5 +15,13 @@
   },
   "devDependencies": {
     "typescript": "^4.2.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikec95/zero-websecurity-e2e.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mikec95/zero-websecurity-e2e/issues"
+  },
+  "homepage": "https://github.com/mikec95/zero-websecurity-e2e#readme"
 }
