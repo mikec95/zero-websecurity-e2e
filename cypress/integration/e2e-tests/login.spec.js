@@ -26,8 +26,9 @@ describe('Login/Logout Test', () => {
     cy.get('ul.nav-tabs').should('be.visible')
   })
   it('Log Out Successfully', () => {
-    cy.get('username').click()
-    cy.get('Logout').click()
+    cy.get('body').type('{esc}') // Escape browser alert informing user of poor password
+    cy.get('i.icon-user').click()
+    cy.get('#logout_link').click()
     cy.url().should('eq', BASE + '/index.html')
   })
 })
