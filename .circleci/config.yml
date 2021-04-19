@@ -1,3 +1,5 @@
+version: 2.1
+
 # Define the jobs we want to run for this project
 jobs:
   build:
@@ -18,7 +20,6 @@ jobs:
 
 # Orchestrate our job run sequence
 workflows:
-  version: 2.0
   build_and_test:
     jobs:
       - build
