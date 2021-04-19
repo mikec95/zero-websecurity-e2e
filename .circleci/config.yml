@@ -16,7 +16,7 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run: cy:run
+      - run: ./node_modules/.bin/cypress run
 
 # Orchestrate our job run sequence
 workflows:
