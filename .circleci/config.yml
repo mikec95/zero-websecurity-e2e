@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Install npm dependencies
           command: |
-            npm install --save
+            mkdir ./node_modules && npm install --save
 
   test:
     docker:
@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            npx ./node_modules/cypress/bin run
+            npm run cy:run
 
 # Orchestrate our job run sequence
 workflows:
