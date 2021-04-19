@@ -5,7 +5,7 @@ jobs:
       - image: alpine:3.7
     steps:
       - checkout
-      
+
       # Download and cache dependencies
       - restore_cache:
           keys:
@@ -17,15 +17,14 @@ jobs:
         command: 'npm run cy:run'
 
       - save_cache:
-        key:  
-        paths: - ./node_modules
+        key:
+        paths:
+          - ./node_modules
 
       - run:
         name: update-npm
         command: 'sudo npm install -g npm@latest'
-      
+
       - run:
         name: install-npm-wee
         command: npm install
-      
-      
