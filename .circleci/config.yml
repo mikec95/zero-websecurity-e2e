@@ -3,20 +3,17 @@ version: 2.0
 # Define the jobs we want to run for this project
 jobs:
   build:
+    working_directory: ~/circleci
     docker:
       - image: circleci/<language>:<version TAG>
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD # context / project UI env-var reference
     steps:
       - checkout
       - run: npm install
+
   test:
+    working_directory: ~/circleci
     docker:
       - image: circleci/<language>:<version TAG>
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD # context / project UI env-var reference
     steps:
       - checkout
       - run: npm run cy:run
@@ -26,4 +23,6 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test
+      - test:
+        requires:
+          - build
