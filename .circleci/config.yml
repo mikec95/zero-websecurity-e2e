@@ -3,7 +3,6 @@ version: 2.1
 # Define the jobs we want to run for this project
 jobs:
   build:
-    working_directory: ~/zero-web-security-e2e
     docker:
       - image: circleci/node:latest
     steps:
@@ -11,7 +10,6 @@ jobs:
       - run: mkdir node_modules && npm install --save-dev
 
   test:
-    working_directory: ~/zero-web-security-e2e
     docker:
       - image: circleci/node:latest
     steps:
