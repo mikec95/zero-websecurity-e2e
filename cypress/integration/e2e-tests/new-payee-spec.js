@@ -21,4 +21,8 @@ describe('New Payee Creation Test', () => {
     cy.get('li#pay_bills_tab').should('have.class', 'active')
     cy.get('form').should('be.visible')
   })
+  it('Navigate to "Add New Payee" tab', () => {
+    cy.get('li').contains('Add New Payee').click()
+    cy.get('form.form-horizontal').should('be.visible')
+  })
 })
