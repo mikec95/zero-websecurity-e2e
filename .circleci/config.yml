@@ -8,9 +8,9 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Install npm dependencies
-        command: |
-          npm install --save
+          name: Install npm dependencies
+          command: |
+            npm install --save
 
   test:
     docker:
@@ -18,9 +18,9 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Run Tests
-        command: |
-          ./node_modules/cypress/bin run
+          name: Run Tests
+          command: |
+            ./node_modules/cypress/bin run
 
 # Orchestrate our job run sequence
 workflows:
