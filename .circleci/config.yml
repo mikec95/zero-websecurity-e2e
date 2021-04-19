@@ -7,14 +7,20 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run: mkdir node_modules && npm install --save-dev
+      - run:
+        name: Install npm dependencies
+        command: |
+          npm install --save
 
   test:
     docker:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run: npx ./node_modules/cypress run
+      - run:
+        name: Run Tests
+        command: |
+          ./node_modules/cypress/bin run
 
 # Orchestrate our job run sequence
 workflows:
