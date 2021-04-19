@@ -8,7 +8,7 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run: npm init && npm install
+      - run: npm install
 
   test:
     working_directory: ~/zero-web-security-e2e
@@ -16,7 +16,7 @@ jobs:
       - image: circleci/node:latest
     steps:
       - checkout
-      - run: npm run cy:run
+      - run: npx ./node_modules/.bin/cypress run
 
 # Orchestrate our job run sequence
 workflows:
