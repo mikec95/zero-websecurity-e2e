@@ -25,4 +25,18 @@ describe('New Payee Creation Test', () => {
     cy.get('li').contains('Add New Payee').click()
     cy.get('form.form-horizontal').should('be.visible')
   })
+  it('Submit Invalid Data', () => {
+    cy.get('input#add_new_payee').click()
+    cy.get('div#alert_content').should('not.be.visible')
+  })
+  it('Fill out form', () => {
+    cy.get('input#np_new_payee_name').type('First Last')
+    cy.get('textarea#np_new_payee_address').type('Address')
+    cy.get('input#np_new_payee_account').type('Account')
+    cy.get('input#np_new_payee_details').type('Payee Details')
+  })
+  it('Submit Valid Data', () => {
+    cy.get('input#add_new_payee').click()
+    cy.get('div#alert_content').should('be.visible')
+  })
 })
