@@ -4,6 +4,4 @@ jobs:
     docker:
       - image: alpine:3.7
     steps:
-      - run:
-          name: The First Step
-          command: npm run cy:run
+      - run: npm run cy:run
