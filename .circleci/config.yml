@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Run Tests
           command: |
-          $(npm bin)/cypress run
+          npx cypress run
 
 # Orchestrate our job run sequence
 workflows:
