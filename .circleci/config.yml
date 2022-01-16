@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Install npm dependencies
           command: |
-            npm ci && npm install && npx cypress install --force
+            npm ci && npm install
 
   test:
     docker:
@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            cd ../ && npx cypress run
+            cd ../ npx cypress open && npx cypress run
 
 # Orchestrate our job run sequence
 workflows:
