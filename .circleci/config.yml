@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Run Tests
           command: |
-            cd ../ && npx cypress run
+            cd ../ && npm run cy:run
 
 # Orchestrate our job run sequence
 orbs:
