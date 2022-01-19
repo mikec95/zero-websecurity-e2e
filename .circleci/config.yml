@@ -33,8 +33,6 @@ jobs:
             npm run cy:run
 
 # Orchestrate our job run sequence
-orbs:
-  cypress: cypress-io/cypress@1
 
 workflows:
   build_and_test:
