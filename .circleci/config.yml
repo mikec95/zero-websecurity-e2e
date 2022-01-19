@@ -1,47 +1,11 @@
 version: 2.1
-
-# Define the jobs we want to run for this project
-jobs:
-  build:
-    docker:
-      - image: circleci/node:latest
-    steps:
-      - checkout
-      - run:
-          name: Install npm dependencies
-          command: |
-            npm install && sudo apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
-             && ./node_modules/.bin/cypress run
-
-  setup:
-    docker:
-      - image: circleci/node:latest
-    steps:
-      - checkout
-      - run:
-          name: Install Linux dependencies
-          command: |
-            sudo apt-get install libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb
-
-  test:
-    docker:
-      - image: circleci/node:latest
-    steps:
-      - checkout
-      - run:
-          name: Run Tests
-          command: |
-            ./node_modules/.bin/cypress run
-
-# Orchestrate our job run sequence
-
+orbs:
+  # "cypress-io/cypress@1" installs the latest published
+  # version "1.x.y" of the orb. We recommend you then use
+  # the strict explicit version "cypress-io/cypress@1.x.y"
+  # to lock the version and prevent unexpected CI changes
+  cypress: cypress-io/cypress@1
 workflows:
-  build_and_test:
+  build:
     jobs:
-      - build
-      - setup:
-          requires:
-            - build
-      - test:
-          requires:
-            - setup
+      - cypress/run
