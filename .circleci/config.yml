@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Install npm dependencies
           command: |
-            npm ci && npm install
+            cd ../ && npm ci && npm install
 
   setup:
     docker:
